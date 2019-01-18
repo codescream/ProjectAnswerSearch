@@ -1,24 +1,20 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Net;
+using System.IO;
+using MovieMarvel;
 
 namespace ProjectAnswerSearch
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Text;
-    using System.Net;
-    using System.IO;
-    using MovieMarvel;
-
-    namespace Answers_csharp
-    {
         class Program
         {
-            // Replace the accessKey string value with your valid access key.
-            const string accessKey = "eb9b089541dc4cb28f2404a8216c82c6";
+        // Replace the accessKey string value with your valid access key.
+            static string accessKey = Environment.GetEnvironmentVariable("accessKey", EnvironmentVariableTarget.User);
 
             const string uriBase = "https://api.labs.cognitive.microsoft.com/answerSearch/v7.0/search";
 
-            const string searchTerm = "what is the third law of calculus";
+            const string searchTerm = "third law of calculus";
 
             // Used to return news search results including relevant headers
             struct SearchResult
@@ -143,5 +139,4 @@ namespace ProjectAnswerSearch
             }
 
         }
-    }
 }
